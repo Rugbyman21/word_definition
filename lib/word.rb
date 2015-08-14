@@ -1,17 +1,17 @@
 class Word
   attr_reader(:word)
 
-# @@word = []
+@@word = []
 
   define_method(:initialize) do |attributes|
     @word = attributes.fetch(:word)
 
-    # @id = @@word.length().+(1)
+    @id = @@word.length().+(1)
 
   end
 
   define_singleton_method(:all) do
-    @@word
+    []
   end
 
   define_method(:save) do
@@ -33,4 +33,4 @@ class Word
   found_word
 
   end
-end
+ end
