@@ -2,7 +2,7 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/words')
-# require('./lib/definitions')
+require('./lib/definitions')
 
 get('/') do
   erb(:index)
