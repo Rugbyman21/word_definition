@@ -1,13 +1,27 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/word')
-# require('./lib/defination')
+require('./lib/words')
+# require('./lib/definitions')
 
 get('/') do
   erb(:index)
 end
 
-get('/word/new') do
-  erb(:word_form)
+get('/words/new') do
+  erb(:words_form)
+end
+
+get('/words') do
+  @word = Word.all()
+  erb(:words)
+end
+
+post('/words') do
+  name = params.fetch('name')
+
+newWords = Words.new({:name => name})
+newWords.save()
+@words = Words.all()
+  erb(:success)
 end
