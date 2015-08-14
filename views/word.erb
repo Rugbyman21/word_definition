@@ -1,0 +1,10 @@
+<h3>New Definition Here</h3>
+
+<ul>
+  <% @words.vocab().each() do |vocab| %>
+    <li><a href="/definition/<%= vocab.id() %>"><%= vocab.name() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/words/<%= @words.id%>/definitions/new">Add a new definitions</a>
+<a href="/">Return to Main Page</a>

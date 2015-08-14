@@ -20,8 +20,34 @@ end
 post('/words') do
   name = params.fetch('name')
 
-newWords = Words.new({:name => name})
-newWords.save()
-@words = Words.all()
+  newWords = Words.new({:name => name})
+  newWords.save()
+  @words = Words.all()
+  erb(:success)
+end
+
+get('/definitions/:id') do
+  @definitions = Definitions.find(params.fetch('id').to_i())
+  erb(:definitions)
+end
+
+get('/words/:id') do
+  @words = Words.find(params.fetch('id').to_i())
+  erb(:word)
+end
+
+get('words/:id/definitions/new') do
+  @words = Words.find(params.fetch('id').to_i())
+  erb(:words_definition_form)
+end
+
+post('/definitions') do
+  meaning = params.fetch('meaning')
+  type = params.fetch('type')
+
+  definition = Definitions.new(:meaning => meaning, :type => type)
+  definition.save()
+  @word = Word.find(params.fetch('words_id').to_i())
+  @word.add_definitions(@vocab)
   erb(:success)
 end
