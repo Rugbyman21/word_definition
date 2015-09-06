@@ -1,11 +1,11 @@
 require('rspec')
 require('word')
-#
-# describe(Words) do
-#   before() do
-#     Words.clear()
-#   end
-#
+
+describe(Words) do
+  before() do
+    Words.clear()
+  end
+
   describe('#name') do
     it("returns the name of the word") do
       test_words = Words.new({:name => "car", :id => "1"})
@@ -57,4 +57,4 @@ require('word')
 #       test_words = Words.new({:name => "car", :id => "1"})
 #     end
 #   end
-# end
+end

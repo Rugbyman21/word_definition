@@ -9,19 +9,19 @@ class Words
     @id = @@words.length().+(1)
 
   end
-#
-#   define_singleton_method(:all) do
-#     []
-#   end
-#
+
+  define_singleton_method(:all) do
+    []
+  end
+
 #   define_method(:save) do
 #     @@words.push(self)
 #   end
-#
-#   define_singleton_method(:clear) do
-#     @@words = []
-#   end
-#
+
+  define_singleton_method(:clear) do
+    @@words = []
+  end
+
 #   define_singleton_method(:find) do |id|
 #     found_words = nil
 #     @@words.each() do |words|
