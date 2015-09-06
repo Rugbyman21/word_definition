@@ -1,14 +1,14 @@
 class Words
   attr_reader(:name, :id)
-#
-# @@words = []
-#
-#   define_method(:initialize) do |attributes|
-#     @name = attributes.fetch(:name)
-#     @vocab = []
-#     @id = @@words.length().+(1)
-#
-#   end
+
+@@words = []
+
+  define_method(:initialize) do |attributes|
+    @name = attributes.fetch(:name)
+    @vocab = []
+    @id = @@words.length().+(1)
+
+  end
 #
 #   define_singleton_method(:all) do
 #     []
